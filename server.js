@@ -64,32 +64,34 @@ function submitHandler(request){
                     console.log("missing field 'price' on bid");
                     continue;
                 }
-                try{
-                    if( request.device.os.includes(bid.ext.os)) {
-                        if(bid.ext.length < request.imp.video.maxduration &&
+
+                if( request.device.os.includes(bid.ext.os)) {
+                    if(request.imp.video && 
+                        bid.ext.length < request.imp.video.maxduration &&
                         bid.ext.length > request.imp.video.minduration) {
-                            validBids.push({
-                            'seat': seat,
-                            'bid': bid
-                            });
-                        }
+                        validBids.push({
+                        'seat': seat,
+                        'bid': bid
+                        });
                     }
-                } catch(e) {
-                    return {'RequestError':' malformed/missing duration fields.'}
                 }
             }
         }
     }
 
-  let currentBest = 0;
-  let bidResponse = null;
-  for(elem of validBids){
-    if(elem.bid.price > currentBest){
-      currentBest = elem.bid.price
-      bidResponse = elem.seat;
+  return determineBid(validBids);
+}
+
+function determineBid(validBids) {
+    let currentBest = 0;
+    let bidResponse = { 'RequestError': ' No valid bid determined' };
+    for (elem of validBids) {
+        if (elem.bid.price > currentBest) {
+            currentBest = elem.bid.price;
+            bidResponse = elem.seat;
+        }
     }
-  }
-  return bidResponse;
+    return bidResponse;
 }
 
 function validateFields(baseObject , validationFields){
