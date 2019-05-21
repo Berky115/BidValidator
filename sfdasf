@@ -1,5 +1,0 @@
-    let validationErrors = [];
-    validationErrors.concat(validateFields(request, requiredBaseFields, false));
-    validationErrors.concat(validateFields(request.imp, impFields));
-    validationErrors.concat(validateFields(request, requiredObjectFields));
-    if(validationErrors.length > 0) return {'RequestError':validationErrors};
