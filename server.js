@@ -18,17 +18,12 @@ const impFields = [
 ]
 
 const requiredObjectFields = [
+    { field: 'id'},
+    { field: 'imp'},
     {  obj: 'imp', field: 'id'},
     {  obj: 'app', field:'id'},
     {  obj: 'device', field:'os'},
 ]
-
-const requiredBaseFields = [
-    { field: 'id'},
-    { field: 'imp'},
-]
-
-
 
 app.use(bodyParser.json()); 
 
@@ -48,45 +43,39 @@ app.post('/sendRequest', (req, res) => {
 
 function submitHandler(request){
 
-
-    if( validateFields(request, requiredBaseFields, false)  ) return validateFields(request,requiredBaseFields, false);
+    if( validateFields(request, requiredObjectFields)  ) return validateFields(request,requiredObjectFields);
 
     if( validateFields(request.imp, impFields) ) return validateFields(request.imp,impFields);
 
-    if( validateFields(request, requiredObjectFields)  ) return validateFields(request,requiredObjectFields);
-
-    if(request.imp.video){
-        if( request.imp.video.maxduration < request.imp.video.minduration) return {'RequestError':' malformed duration specification'};
-    }
+    if( request.imp.video && request.imp.video.maxduration < request.imp.video.minduration) return {'RequestError':' malformed duration specification'};
     
     let validBids = [];
     for(let elem of responseBids) {
         if(!elem.id){
             continue
         }
-        let seats = elem.seatbid;
-        for(seat of seats){
+        for(seat of elem.seatbid){
             if(!seat.bid) {
                 console.log("Missing field 'bid' on seatbid");
                 continue;
             }
-            let bids = seat.bid;
-            for(bid of bids){
+            for(bid of seat.bid){
                 if( !bid.price){
                     console.log("missing field 'price' on bid");
                     continue;
                 }
                 try{
-                    if( request.device.os.includes(bid.ext.os ) &&
-                        bid.ext.length < request.imp.video.maxduration &&
-                        bid.ext.length > request.imp.video.minduration ){
-                        validBids.push({
-                        'seat': seat,
-                        'bid': bid
-                        });
+                    if( request.device.os.includes(bid.ext.os)) {
+                        if(bid.ext.length < request.imp.video.maxduration &&
+                        bid.ext.length > request.imp.video.minduration) {
+                            validBids.push({
+                            'seat': seat,
+                            'bid': bid
+                            });
+                        }
                     }
                 } catch(e) {
-                    return {'RequestError':' malformed /missing duration fields'}
+                    return {'RequestError':' malformed/missing duration fields.'}
                 }
             }
         }
@@ -103,15 +92,13 @@ function submitHandler(request){
   return bidResponse;
 }
 
-function validateFields(baseObject , validationFields, nested=true){
-    if(nested){
-        for(let fieldPair of validationFields){
+function validateFields(baseObject , validationFields){
+    for(let fieldPair of validationFields){
+        if(fieldPair.obj){
             if(baseObject.hasOwnProperty(fieldPair.obj)  && !baseObject[fieldPair.obj].hasOwnProperty(fieldPair.field)){
                 return {"RequestError" : "Missing required " + fieldPair.obj + " attribute: " + fieldPair.field};
             }
-        }
-    } else {
-        for(let fieldPair of validationFields){
+        } else {
             if(!baseObject.hasOwnProperty(fieldPair.field)){
                 return {"RequestError" : "Missing required attribute: " + fieldPair.field};
             }
