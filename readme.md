@@ -122,6 +122,9 @@ If the server is running as expected and the object passed in is valid, then the
  ### Live:
  If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com) Simply run a ```/sendRequest``` post against the url.
 
+ ## Notes:
+While building the bid response I noticed a discrepancy between the provided responses and the intended spec. According to page 26 of the OpenRTB 2.3 standards a bid response is required to have fields 'id', impid', and 'price' tied to every bid. Assignments sample bids there is no id or imp id applied to any bids. Rather there is an id for the response. By this logic every bid is invalid. As such I have omitted these validations for the time being.
+
 
 ## Support
 Please review the issues below and number them 1 through 3 based on the order in which you would handle them. Briefly describe your process for prioritizing the issues. 

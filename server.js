@@ -14,7 +14,8 @@ const impFields = [
     {  obj: 'site', field: 'id'},
     {  obj: 'video', field: 'protocols'},
     {  obj: 'video', field: 'minduration'},
-    {  obj: 'video', field: 'maxduration'}
+    {  obj: 'video', field: 'maxduration'},
+    { obj: 'deal', field: 'id'},
 ]
 
 const requiredObjectFields = [
@@ -51,7 +52,7 @@ function submitHandler(request){
     
     let validBids = [];
     for(let elem of responseBids) {
-        if(!elem.id){
+        if(!elem.hasOwnProperty('id')){
             continue
         }
         for(seat of elem.seatbid){
@@ -60,18 +61,23 @@ function submitHandler(request){
                 continue;
             }
             for(bid of seat.bid){
-                if( !bid.price){
+                if(!bid.price){
                     console.log("missing field 'price' on bid");
                     continue;
                 }
-
                 if( request.device.os.includes(bid.ext.os)) {
                     if(request.imp.video && 
                         bid.ext.length < request.imp.video.maxduration &&
                         bid.ext.length > request.imp.video.minduration) {
                         validBids.push({
-                        'seat': seat,
-                        'bid': bid
+                        id : request.id,
+                        seatbid: seat,
+                        bidid: elem.bidid,
+                        cur: elem.cur,
+                        customdata: null,
+                        nbr: null,
+                        ext: null,
+                        bid: bid,
                         });
                     }
                 }
@@ -88,7 +94,15 @@ function determineBid(validBids) {
     for (elem of validBids) {
         if (elem.bid.price > currentBest) {
             currentBest = elem.bid.price;
-            bidResponse = elem.bid;
+            bidResponse =  {
+                id : elem.id,
+                seatbid: elem.seatbid,
+                bidid: elem.bidid,
+                cur: elem.cur,
+                customdata: null,
+                nbr: null,
+                ext: null,
+                };
         }
     }
     return bidResponse;

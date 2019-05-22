@@ -1,1 +1,0 @@
-// Remove bidseat from response/ best bid Object. Old implementation that does not need to be.
