@@ -113,7 +113,7 @@ If the server is running as expected and the object passed in is valid, then the
 
     ```npm start``` or ```node server.js``` to begin running the server.
 
-    To verify the app is running as intented, check '''localhost:3000''' through your browser. Note the default port is **3000**. You are welcome to change this if it conflicts with another local app.
+    To verify the app is running as intented, check ```localhost:3000``` through your browser. Note the default port is **3000**. You are welcome to change this if it conflicts with another local app.
 
     Run a post request against the server at /sendRequest using your favorite Rest client. I recommend Postman.
 
