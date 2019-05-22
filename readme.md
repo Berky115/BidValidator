@@ -104,6 +104,7 @@ If the server is running as expected and the object passed in is valid, then the
  To run locally your machine will need...
   - A stable version of [Node.js](https://nodejs.org)
   - A stable version of the node package manager [npm](https://www.npmjs.com/)
+  - A reliable Rest Client such as [Postman](https://www.getpostman.com/)
 
     ```git clone``` the repo to your machine.
 
@@ -119,7 +120,7 @@ If the server is running as expected and the object passed in is valid, then the
 
 
  ### Live:
- If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com)
+ If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com) Simply run a ```/sendRequest``` post against the url.
 
 
 ## Support
