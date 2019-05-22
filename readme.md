@@ -131,10 +131,10 @@ Hello Unity,
 I saw you require a categories(cat) array in the response. What should I fill for the cat array? What if some of our advertisers don’t have this information?
 Thanks!
 ```
-### Part 1:
+#### Part 1:
 I have prioritized this second of the three ticket requests. The user does not have the system active yet. This means there is no immediate threat to ad revenue. That said, they are attempting to implement the system. This implies they are a series collaborator and will be able to provide specific information while evaluating.
 
-### Part 2:
+#### Part 2:
 * Dear customer,
 *Thank you for reaching out to our support team. 
 *The cat/categories array is populated by “Content Categories”. You can get a detailed breakdown of there use in the openRTB *Spec provided online: OpenRTB.
@@ -152,10 +152,10 @@ Hello,
 What are the differences between the nurl and the adm fields? Which should I use?
 ```
 
-### Part 1:
+#### Part 1:
 I chose to rank this as the lowest priority ticket. The customer has provided no context for the problem and does not display any signs of urgent need. Additionally, the question reads as a curiosity as opposed to a call for action.
 
-### Part 2:
+#### Part 2:
 *Dear customer,
 
 *Thank you for reaching out to our support team.
@@ -177,10 +177,10 @@ I followed your RTB spec and finished integration. I can see that there are some
 
 ```
 
-### Part 1:
+#### Part 1:
 I have prioritize this as the highest the provided tickets. The customer is someone actively using the bid system. This implies the issue they have is persisting and possibly costing them in real time. Either through finance or flawed statistic information. As such they need a solution sooner then the above groups. Additionally they have provided a sample response, a useful tool for debugging.
 
-### Part 2:
+#### Part 2:
 *Dear Customer,
 
 *Thank you for reaching out our support team. 
