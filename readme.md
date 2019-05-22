@@ -146,7 +146,7 @@ Hope that helps, please feel free to reach out again if you have additional ques
 
 Cheers,
 Drew Facchiano
-//Note: This is an optional field according to the docs. If this is a use case where they are being forced upon a user, then my explanation would change.
+**Note:** This is an optional field according to the docs. If this is a use case where they are being forced upon a user, then my explanation would change.
 
 ```
 Hello,
@@ -161,7 +161,7 @@ Dear customer,
 
 Thank you for reaching out to our support team.
 
-To answer your question, the nurl is a string array object. It is used as a Win notice URL, which is called by the exchange *application if the bid wins. It can be used as an optional means of serving ad markup.
+To answer your question, the nurl is a string array object. It is used as a Win notice URL, which is called by the exchange application if the bid wins. It can be used as an optional means of serving ad markup.
 
 In contrast the adm fields are string objects. They are intended as optional means of conveying ad markup in case the bid wins. It supersedes the win notice if markup is included in both.
 
