@@ -107,7 +107,7 @@ If the server is running as expected and the object passed in is valid, then the
 
     ```git clone``` the repo to your machine.
 
-    cd into the new directory
+    ```cd``` into the new directory
 
     ```npm install``` to apply all necessary dependencies 
 
