@@ -116,6 +116,8 @@ If the server is running as expected and the object passed in is valid, then the
 
     ```npm start``` or ```node server.js``` to begin running the server.
 
+    ``` npm test ``` or ``` mocha tests/bidCalculator.js``` to run test cases used [Mocha](https://mochajs.org/)
+
 **To verify the app is running** Check ```localhost:3000``` through your browser. Note the default port is **3000**. You are welcome to change this if it conflicts with another local app.
 
 **To get a bid response** send a Post request to the sever with ```/bid-validator/v1/bids/search``` alongside a valid JSON biddingRequest

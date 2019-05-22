@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha tests/BidCalculatorTest.js"
+    "test": "mocha tests/bidCalculatorTest.js"
   },
   "author": "Andrew Facchiano",
   "license": "ISC",
