@@ -147,6 +147,7 @@ _While the array is required, it’s population/content is not. If an advertiser
 _Hope that helps, please feel free to reach out again if you have additional questions._
 
 _Cheers,_
+
 _Drew Facchiano_
 **Note:** This is an optional field according to the docs. If this is a use case where they are being forced upon a user, then my explanation would change.
 
@@ -172,6 +173,7 @@ _For more information around these values, you can referencing the online OpenRT
 _Hope that helps, please feel free to reach out again if you have additional or follow-up questions._
 
 _Cheers,_
+
 _Drew Facchiano_
 
 ```
@@ -194,6 +196,7 @@ To help further, could you please send me any request objects being used at this
 _Kindly evaluate and if you have further insights, let me know!_
 
 _Cheers,_
+
 _Drew Facchiano_
 
 ## Technical
