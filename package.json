@@ -11,5 +11,8 @@
     "start": "node server.js"
   },
   "author": "Andrew Facchiano",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  }
 }
