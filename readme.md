@@ -121,7 +121,7 @@ If the server is running as expected and the object passed in is valid, then the
  ### Live:
  If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com)
 
-Post to -> /sendRequest with a valid JSON biddingRequest
+Send a Post request to the sever with ```/sendRequest``` alongside a valid JSON biddingRequest
 
 
 
