@@ -129,7 +129,7 @@ If the server is running as expected and the object passed in is valid, then the
  ## Notes:
 While building the bid response I noticed a discrepancy between the provided responses and the intended spec. According to page 26 of the OpenRTB 2.3 standards a bid response is required to have fields 'id', impid', and 'price' tied to every bid. Assignments sample bids there is no id or imp id applied to any bids. Rather there is an id for the response. By this logic every bid is invalid. As such I have omitted these validations for the time being.
 
-Additionally the spec makes note of fields w and h. According to the spec these fields are recommended but not required. They reffer to condition logic depending on fields wmin, wmax, hmin and hmax depending on the object being read **See page 13-14 of the OpenRTB 2.3 Spec**. While the sample bidders have a height/width field nested inside the adm string, the intent seems to be determined by w and h on active bids, which have been ommited from the Bids send to me for the assignment. s such the app does not validate this behavior.
+Additionally the spec makes note of fields w and h. According to the spec these fields are recommended but not required. They reffer to condition logic depending on fields wmin, wmax, hmin and hmax depending on the object being read **See page 13-14 of the OpenRTB 2.3 Spec**. While the sample bidders have a height/width field nested inside the adm string, the intent seems to be determined by w and h on active bids, which have been ommited from the Bids send to me for the assignment. As such the app does not validate this behavior.
 
 
 ## Support
