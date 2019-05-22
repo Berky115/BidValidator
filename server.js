@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser');
-const responseBids = require("./ResponseBids");
-const requiredFields = require("./RequiredFields");
-const impFields = require("./ImpFields");
+const responseBids = require("./constants/ResponseBids");
+const requiredFields = require("./constants/RequiredFields");
+const impFields = require("./constants/ImpFields");
 
 const port = 3000
 const app = express()
