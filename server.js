@@ -1,30 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const responseBids = require("./ResponseBids");
+const requiredFields = require("./RequiredFields");
+const impFields = require("./ImpFields");
 
 const port = 3000
 const app = express()
 app.set('port', process.env.PORT || port);
-const impFields = [
-    {  obj: 'banner', field: 'format'},
-    {  obj: 'video', field:'mimes'},
-    {  obj: 'audio', field:'mimes'},
-    {  obj: 'native', field:'request'},
-    {  obj: 'deal', field:'id'},
-    {  obj: 'site', field: 'id'},
-    {  obj: 'video', field: 'protocols'},
-    {  obj: 'video', field: 'minduration'},
-    {  obj: 'video', field: 'maxduration'},
-    { obj: 'deal', field: 'id'},
-]
-
-const requiredObjectFields = [
-    { field: 'id'},
-    { field: 'imp'},
-    {  obj: 'imp', field: 'id'},
-    {  obj: 'app', field:'id'},
-    {  obj: 'device', field:'os'},
-]
 
 app.use(bodyParser.json()); 
 
@@ -44,7 +26,7 @@ app.post('/sendRequest', (req, res) => {
 
 function submitHandler(request){
 
-    if( validateFields(request, requiredObjectFields)  ) return validateFields(request,requiredObjectFields);
+    if( validateFields(request, requiredFields)  ) return validateFields(request,requiredFields);
 
     if( validateFields(request.imp, impFields) ) return validateFields(request.imp,impFields);
 
@@ -56,12 +38,12 @@ function submitHandler(request){
             continue
         }
         for(seat of elem.seatbid){
-            if(!seat.bid) {
+            if(!seat.hasOwnProperty('bid')) {
                 console.log("Missing field 'bid' on seatbid");
                 continue;
             }
             for(bid of seat.bid){
-                if(!bid.price){
+                if(!bid.hasOwnProperty('price')){
                     console.log("missing field 'price' on bid");
                     continue;
                 }
@@ -74,9 +56,6 @@ function submitHandler(request){
                         seatbid: seat,
                         bidid: elem.bidid,
                         cur: elem.cur,
-                        customdata: null,
-                        nbr: null,
-                        ext: null,
                         bid: bid,
                         });
                     }

@@ -104,22 +104,5 @@ const responseBids = [
     }
 ];
 
-const impValidationFields = [
-    {  obj: 'banner', field: 'format'},
-    {  obj: 'video', field:'mimes'},
-    {  obj: 'audio', field:'mimes'},
-    {  obj: 'native', field:'request'},
-    {  obj: 'deal', field:'id'},
-    {  obj: 'site', field: 'id'},
-    {  obj: 'video', field: 'protocols'}
-]
-
-const baseFields = [
-        {  obj: 'imp', field: 'id'},
-        {  obj: 'app', field:'id'},
-        {  obj: 'device', field:'os'},
-    ]
-
-
 
 module.exports = responseBids;
