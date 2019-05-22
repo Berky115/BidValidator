@@ -119,7 +119,7 @@ If the server is running as expected and the object passed in is valid, then the
 
 
  ### Live:
-    A live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com)
+ If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com)
 
 Post to -> /sendRequest with a valid JSON biddingRequest
 
