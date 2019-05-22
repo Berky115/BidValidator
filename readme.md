@@ -104,13 +104,14 @@ If the server is running as expected and the object passed in is valid, then the
  To run locally your machine will need...
   - A stable version of [Node.js](https://nodejs.org)
   - A stable version of the node package manager [npm](https://www.npmjs.com/)
-    git clone the repo to your machine.
+
+    ```git clone``` the repo to your machine.
 
     cd into the new directory
 
-    npm install to apply all necessary dependencies 
+    ```npm install``` to apply all necessary dependencies 
 
-    npm start or node server.js to begin running the server.
+    ```npm start``` or ```node server.js``` to begin running the server.
 
     To verify the app is running as intented, check localhost:3000 through your browser. Note port 3000 is the default port used. You are welcome to change to whatever suits yours needs
 
