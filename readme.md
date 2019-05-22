@@ -136,17 +136,18 @@ I have prioritized this second of the three ticket requests. The user does not h
 
 #### Part 2:
 
-Dear customer,
+_Dear customer,_
 
-Thank you for reaching out to our support team. 
-The cat/categories array is populated by “Content Categories”. You can get a detailed breakdown of there use in the openRTB Spec provided online: OpenRTB.
+_Thank you for reaching out to our support team._ 
 
-While the array is required, it’s population/content is not. If an advertiser does not feel the need to take advantage of this feature, they will not be rejected as a bidder.
+_The cat/categories array is populated by “Content Categories”. You can get a detailed breakdown of there use in the openRTB Spec provided online: OpenRTB._
 
-Hope that helps, please feel free to reach out again if you have additional questions.
+_While the array is required, it’s population/content is not. If an advertiser does not feel the need to take advantage of this feature, they will not be rejected as a bidder._
 
-Cheers,
-Drew Facchiano
+_Hope that helps, please feel free to reach out again if you have additional questions._
+
+_Cheers,_
+_Drew Facchiano_
 **Note:** This is an optional field according to the docs. If this is a use case where they are being forced upon a user, then my explanation would change.
 
 ```
@@ -166,12 +167,12 @@ _To answer your question, the nurl is a string array object. It is used as a Win
 
 _In contrast the adm fields are string objects. They are intended as optional means of conveying ad markup in case the bid wins. It supersedes the win notice if markup is included in both._
 
-_For more information around these values, you can referencing the online OpenRTB docution spec under the Bid object. OpenRTB
+_For more information around these values, you can referencing the online OpenRTB docution spec under the Bid object. OpenRTB_
 
-_Hope that helps, please feel free to reach out again if you have additional or follow-up questions.
+_Hope that helps, please feel free to reach out again if you have additional or follow-up questions._
 
-_Cheers,
-_Drew Facchiano
+_Cheers,_
+_Drew Facchiano_
 
 ```
 Hello,
@@ -183,17 +184,17 @@ I followed your RTB spec and finished integration. I can see that there are some
 I have prioritize this as the highest the provided tickets. The customer is someone actively using the bid system. This implies the issue they have is persisting and possibly costing them in real time. Either through finance or flawed statistic information. As such they need a solution sooner then the above groups. Additionally they have provided a sample response, a useful tool for debugging.
 
 #### Part 2:
-Dear Customer,
+_Dear Customer,_
 
-Thank you for reaching out our support team. 
+_Thank you for reaching out our support team._ 
 
-A lack of imp/impression objects implies a possible misstep during integration. 
-To help further, could you please send me any request objects being used at this time? Understanding the input can be useful for evaluating the issue. This is also where you should see the initial impression data. 
+_A lack of imp/impression objects implies a possible misstep during integration. 
+To help further, could you please send me any request objects being used at this time? Understanding the input can be useful for evaluating the issue. This is also where you should see the initial impression data._ 
 
-Kindly evaluate and if you have further insights, let me know!
+_Kindly evaluate and if you have further insights, let me know!_
 
-Cheers,
-Drew Facchiano
+_Cheers,_
+_Drew Facchiano_
 
 ## Technical
 
