@@ -7,7 +7,7 @@
 
  ## Use
 
-**sendRequest:** A Post request that consumes a JSON response object following the OpenRTB Specifications version 2.3 available online: https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf
+**sendRequest:** A Post request that consumes a JSON response object following the OpenRTB Specifications version 2.3 available online: [openRTB](https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf)
  
  ## Sample request
 
@@ -131,17 +131,18 @@ Thanks!
 ```
 ### Part 1:
 I have prioritized this second of the three ticket requests. The user does not have the system active yet. This means there is no immediate threat to ad revenue. That said, they are attempting to implement the system. This implies they are a series collaborator and will be able to provide specific information while evaluating.
+
 ### Part 2:
 * Dear customer,
-Thank you for reaching out to our support team. 
-The cat/categories array is populated by “Content Categories”. You can get a detailed breakdown of there use in the openRTB Spec provided online: OpenRTB.
+*Thank you for reaching out to our support team. 
+*The cat/categories array is populated by “Content Categories”. You can get a detailed breakdown of there use in the openRTB *Spec provided online: OpenRTB.
 
-While the array is required, it’s population/content is not. If an advertiser does not feel the need to take advantage of this feature, they will not be rejected as a bidder.
+*While the array is required, it’s population/content is not. If an advertiser does not feel the need to take advantage of this *feature, they will not be rejected as a bidder.
 
-Hope that helps, please feel free to reach out again if you have additional questions.
+*Hope that helps, please feel free to reach out again if you have additional questions.
 
-Cheers,
-Drew Facchiano *
+*Cheers,
+*Drew Facchiano
 //Note: This is an optional field according to the docs. If this is a use case where they are being forced upon a user, then my explanation would change.
 
 ```
@@ -176,8 +177,6 @@ I followed your RTB spec and finished integration. I can see that there are some
 
 ### Part 1:
 I have prioritize this as the highest the provided tickets. The customer is someone actively using the bid system. This implies the issue they have is persisting and possibly costing them in real time. Either through finance or flawed statistic information. As such they need a solution sooner then the above groups. Additionally they have provided a sample response, a useful tool for debugging.
-
-
 
 ### Part 2:
 *Dear Customer,
