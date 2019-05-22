@@ -137,6 +137,7 @@ I have prioritized this second of the three ticket requests. The user does not h
 #### Part 2:
 
 Dear customer,
+
 Thank you for reaching out to our support team. 
 The cat/categories array is populated by “Content Categories”. You can get a detailed breakdown of there use in the openRTB Spec provided online: OpenRTB.
 
@@ -157,20 +158,20 @@ What are the differences between the nurl and the adm fields? Which should I use
 I chose to rank this as the lowest priority ticket. The customer has provided no context for the problem and does not display any signs of urgent need. Additionally, the question reads as a curiosity as opposed to a call for action.
 
 #### Part 2:
-Dear customer,
+_Dear customer,_
 
-Thank you for reaching out to our support team.
+_Thank you for reaching out to our support team._
 
-To answer your question, the nurl is a string array object. It is used as a Win notice URL, which is called by the exchange application if the bid wins. It can be used as an optional means of serving ad markup.
+_To answer your question, the nurl is a string array object. It is used as a Win notice URL, which is called by the exchange application if the bid wins. It can be used as an optional means of serving ad markup._
 
-In contrast the adm fields are string objects. They are intended as optional means of conveying ad markup in case the bid wins. It supersedes the win notice if markup is included in both.
+_In contrast the adm fields are string objects. They are intended as optional means of conveying ad markup in case the bid wins. It supersedes the win notice if markup is included in both._
 
-For more information around these values, you can referencing the online OpenRTB docution spec under the Bid object. OpenRTB
+_For more information around these values, you can referencing the online OpenRTB docution spec under the Bid object. OpenRTB
 
-Hope that helps, please feel free to reach out again if you have additional or follow-up questions.
+_Hope that helps, please feel free to reach out again if you have additional or follow-up questions.
 
-Cheers,
-Drew Facchiano*
+_Cheers,
+_Drew Facchiano
 
 ```
 Hello,
