@@ -4,7 +4,7 @@ const responseBids = require("./ResponseBids");
 
 const port = 3000
 const app = express()
-
+app.set('port', process.env.PORT || port);
 const impFields = [
     {  obj: 'banner', field: 'format'},
     {  obj: 'video', field:'mimes'},
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`App listening on port ${port}`)
  })
 
@@ -88,7 +88,7 @@ function determineBid(validBids) {
     for (elem of validBids) {
         if (elem.bid.price > currentBest) {
             currentBest = elem.bid.price;
-            bidResponse = elem.seat;
+            bidResponse = elem.bid;
         }
     }
     return bidResponse;
