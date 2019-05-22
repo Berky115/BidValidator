@@ -2,7 +2,7 @@
 
 # BidValidator
 
- An App designed to consume Bid requests. Validate their formation, and response with the highest bidder from a predetermined list of responses. Created for Unity Technologies.
+ An App designed to consume bid requests. Validate their formation, and response with the highest bidder from a predetermined list of responses. Created for Unity Technologies.
 
 
  ## Use
