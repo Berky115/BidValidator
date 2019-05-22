@@ -113,16 +113,13 @@ If the server is running as expected and the object passed in is valid, then the
 
     ```npm start``` or ```node server.js``` to begin running the server.
 
-To verify the app is running as intented, check ```localhost:3000``` through your browser. Note the default port is **3000**. You are welcome to change this if it conflicts with another local app.
+**To verify the app is running** Check ```localhost:3000``` through your browser. Note the default port is **3000**. You are welcome to change this if it conflicts with another local app.
 
-    Run a post request against the server at /sendRequest using your favorite Rest client. I recommend Postman.
+**To get a bid response** send a Post request to the sever with ```/sendRequest``` alongside a valid JSON biddingRequest
 
 
  ### Live:
  If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com)
-
-Send a Post request to the sever with ```/sendRequest``` alongside a valid JSON biddingRequest
-
 
 
 ## Support
