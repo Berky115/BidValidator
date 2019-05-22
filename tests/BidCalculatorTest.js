@@ -1,9 +1,8 @@
 const assert = require('assert');
-const bidCalculator = require("./BidCalculator")
-
+const bidCalculator = require("../bidCalculator")
 
 describe('BidCalculator', function() {
-  describe('Valid-bid-request', function() {
+  describe('Valid-bid-request-for-iOS', function() {
     it('should return iOS bid when given a valid bid request', function() {
       assert.deepEqual(bidCalculator({ 
         "id": "bcaIDT1Nbv0zU8mn9tXQ6j", 
@@ -65,7 +64,7 @@ describe('BidCalculator', function() {
     });
   });
 
-  describe('Valid-bid-request', function() {
+  describe('Valid-bid-request-for-Android', function() {
     it('should return Android bid when given a valid bid request', function() {
       assert.deepEqual(bidCalculator({ 
         "id": "bcaIDT1Nbv0zU8mn9tXQ6j", 
@@ -127,7 +126,7 @@ describe('BidCalculator', function() {
     });
   });
 
-  describe('missing-id-request', function() {
+  describe('Missing-required-attribute', function() {
     it('should return error when given a bid request without an id attribute', function() {
       assert.deepEqual(bidCalculator({ 
         "imp": { 
@@ -165,7 +164,7 @@ describe('BidCalculator', function() {
     });
   });
 
-  describe('missing-imp-request', function() {
+  describe('Missing-required-attribute-imp', function() {
     it('should return error when given a bid request without an imp attribute', function() {
       assert.deepEqual(bidCalculator({ 
         "id": "bcaIDT1Nbv0zU8mn9tXQ6j", 
@@ -189,4 +188,82 @@ describe('BidCalculator', function() {
     });
     });
   });
+
+  describe('Missing-nested-attribute', function() {
+    it('should return error when given a bid with a missing attribute on a nested attribute', function() {
+      assert.deepEqual(bidCalculator({ 
+        "id": "bcaIDT1Nbv0zU8mn9tXQ6j", 
+        "imp": { 
+            "id": "1", 
+            "instl": 1, 
+            "tagid": "15939-video", 
+            "video": { 
+                "minduration": 15, 
+                "maxduration": 30, 
+                "protocols": [2,2], 
+                "battr": [5], 
+                "w": 1024, 
+                "h": 600
+            }
+        }, 
+        "app": { 
+            "id": "1", 
+            "bundle": "com.unity3d.ads.example"
+        }, 
+        "device": { 
+            "model": "iPhone", 
+            "os": ["iOS"], 
+            "osv": "10.1", 
+            "hwv": "iphone6", 
+            "geo": { 
+                "country": "USA"
+              }
+          }, 
+          "ext": {} 
+      }),{
+        "RequestError": "Missing required video attribute: mimes"
+    });
+    });
+  });
+
+  describe('Malformed length data', function() {
+    it('should return error  when given a bid request with illogical min/max length', function() {
+      assert.deepEqual(bidCalculator({ 
+        "id": "bcaIDT1Nbv0zU8mn9tXQ6j", 
+        "imp": { 
+            "id": "1", 
+            "instl": 1, 
+            "tagid": "15939-video", 
+            "video": { 
+                "mimes": [ "video/mp4" ],
+                "minduration": 55, 
+                "maxduration": 30, 
+                "protocols": [2,2], 
+                "battr": [5], 
+                "w": 1024, 
+                "h": 600
+            }
+        }, 
+        "app": { 
+            "id": "1", 
+            "bundle": "com.unity3d.ads.example"
+        }, 
+        "device": { 
+            "model": "iPhone", 
+            "os": ["iOS"], 
+            "osv": "10.1", 
+            "hwv": "iphone6", 
+            "geo": { 
+                "country": "USA"
+              }
+          }, 
+          "ext": {} 
+      }), {
+        "RequestError": " malformed duration specification"
+    });
+  });
 });
+
+});
+
+

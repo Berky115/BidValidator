@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
-const bidCalculator = require("./BidCalculator")
+const bidCalculator = require("./bidCalculator")
 const responseBids = require("./constants/ResponseBids");
 
 const port = 3000
