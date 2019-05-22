@@ -7,7 +7,9 @@
 
  ## API
 
-**/sendRequest** A Post request that consumes a JSON response object following the OpenRTB Specifications version 2.3 available online: [openRTB](https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf)
+**/bid-validator/v1/bids/search** A Post request that consumes a JSON response object and searches for the best matching bids. Following the OpenRTB Specifications version 2.3 available online: [openRTB](https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf)
+
+**/bid-validator/v1/bids** A Get request to see all active bids being evaluated.
  
  ## Sample request
 
@@ -116,11 +118,11 @@ If the server is running as expected and the object passed in is valid, then the
 
 **To verify the app is running** Check ```localhost:3000``` through your browser. Note the default port is **3000**. You are welcome to change this if it conflicts with another local app.
 
-**To get a bid response** send a Post request to the sever with ```/sendRequest``` alongside a valid JSON biddingRequest
+**To get a bid response** send a Post request to the sever with ```/bid-validator/v1/bids/search``` alongside a valid JSON biddingRequest
 
 
  ### Live:
- If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com) Simply run a ```/sendRequest``` post against the url.
+ If you would like skip local setup a live example can be found [here](http://bidvalidator-env.cqgr4xt6e8.us-east-2.elasticbeanstalk.com) Simply run a ```/bid-validator/v1/bids/search``` post against the url.
 
  ## Notes:
 While building the bid response I noticed a discrepancy between the provided responses and the intended spec. According to page 26 of the OpenRTB 2.3 standards a bid response is required to have fields 'id', impid', and 'price' tied to every bid. Assignments sample bids there is no id or imp id applied to any bids. Rather there is an id for the response. By this logic every bid is invalid. As such I have omitted these validations for the time being.

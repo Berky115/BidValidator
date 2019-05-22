@@ -12,11 +12,13 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
+app.get('/bid-validator/v1/bids', (req, res) => res.send(responseBids));
+
 app.listen(process.env.PORT || port, () => {
     console.log(`App listening on port ${port}`)
  })
 
-app.post('/sendRequest', (req, res) => {
+app.post('/bid-validator/v1/bids/search', (req, res) => {
     const responseObject = submitHandler(req.body);
     if(responseObject.RequestError){
         res.statusCode = 400;
