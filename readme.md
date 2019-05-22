@@ -5,9 +5,9 @@
  An App designed to consume bid requests. Validate their formation, and response with the highest bidder from a predetermined list of responses. Created for Unity Technologies.
 
 
- ## Use
+ ## API
 
-**sendRequest:** A Post request that consumes a JSON response object following the OpenRTB Specifications version 2.3 available online: [openRTB](https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf)
+**/sendRequest** A Post request that consumes a JSON response object following the OpenRTB Specifications version 2.3 available online: [openRTB](https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf)
  
  ## Sample request
 
